@@ -12,6 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
+import com.parse.Parse;
+import com.parse.ParseObject;
+import com.parse.PushService;
 
 
 public class MainActivity extends Activity {
@@ -20,7 +23,15 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-      
+
+        Parse.initialize(this, "APPLICATION ID", "CLIENT KEY");
+
+        /* ParseObject testObject = new ParseObject("TestObject");
+        testObject.put("foo", "bar");
+        testObject.saveInBackground(); */
+
+        PushService.setDefaultPushCallback(this, MainActivity.class);
+
     }
 
 
