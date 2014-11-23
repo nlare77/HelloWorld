@@ -27,6 +27,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".DisplayMessageActivity"
+            android:label="@string/title_activity_display_message"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.n.hellworld.MainActivity" />
+        </activity>
         <receiver android:name=".MyReceiver">
             <intent-filter>
                 <action android:name="com.tutorialspoint.CUSTOM_INTENT">
@@ -62,6 +70,7 @@
                 <category android:name="com.n.helloworld" />
             </intent-filter>
         </receiver>
+
     </application>
 
 </manifest>
